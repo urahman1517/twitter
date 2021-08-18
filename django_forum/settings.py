@@ -28,7 +28,8 @@ SECRET_KEY = ')%@+pdc$3qsnfxc$+@-go)j87^ba7j66_=(dqn5&7t1(go=z+w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -46,12 +47,15 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
+
 ]
 
 ROOT_URLCONF = 'django_forum.urls'
@@ -80,9 +84,16 @@ WSGI_APPLICATION = 'django_forum.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+      #  'ENGINE': 'django.db.backends.sqlite3',
+      #  'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd3vi4t09spfnbd',
+        'USER': 'xzmktepajfsuru',
+        'HOST': 'ec2-44-195-247-84.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'PASSWORD': 'b389fdf1e6f1098c7c97a0ee4e178d0af940d06015d4534cfe6f766403eddcfc',
+    }    
+
 }
 
 
