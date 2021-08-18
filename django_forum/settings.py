@@ -13,6 +13,7 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
